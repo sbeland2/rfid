@@ -129,9 +129,9 @@ void loop() {
     dump_byte_array(buffer, 16); Serial.println();
     Serial.println();
 
-    // Authenticate using key B
-    Serial.println(F("Authenticating again using key B..."));
-    status = (MFRC522::StatusCode) mfrc522.PCD_Authenticate(MFRC522::PICC_CMD_MF_AUTH_KEY_B, trailerBlock, &key, &(mfrc522.uid));
+    // Authenticate using key A
+    Serial.println(F("Authenticating again using key A..."));
+    status = (MFRC522::StatusCode) mfrc522.PCD_Authenticate(MFRC522::PICC_CMD_MF_AUTH_KEY_A, trailerBlock, &key, &(mfrc522.uid));
     if (status != MFRC522::STATUS_OK) {
         Serial.print(F("PCD_Authenticate() failed: "));
         Serial.println(mfrc522.GetStatusCodeName(status));
